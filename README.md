@@ -17,3 +17,41 @@ Basic guide to use webpack with JavaScript.
     };`
     
     Instead of dist, build folder is used to bundle js files.
+
+# Assets Setup
+
+1. Styling(CSS)
+
+ 1.1. Create style in src with style.css like so -
+ 
+`.<name>{property:value}`
+ 
+ 1.2 Import style.css in index.js
+ 
+ 1.3 Install css loader
+ 
+ `npm install --save-dev style-loader css-loader`
+ 
+ 1.4 Add Loader in webpack like so -
+ ` module: {
+     rules: [
+       {
+         test: /\.css$/,
+         use: [
+           'style-loader',
+           'css-loader'
+         ]
+       }
+     ]
+   }`
+   
+# Run script in Development
+
+ 1. Install webpack-dev-server
+  `npm install --save-dev webpack-dev-server`
+  
+ 2. webpack-dev-server --open in package.json 
+ 
+ 3. Add key in webpack.config.json
+ 
+  `mode: development`
